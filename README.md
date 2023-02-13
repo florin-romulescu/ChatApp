@@ -48,5 +48,6 @@ Aici este explicata cum arata structura de directoare si ce se intampla in fieca
 - `js/`: in acest director vor fi puse toate scripturile de JavaScript
 - `style/`: in acest director vor fi puse toate fisierele .css
 - `templates/`: in acest director vor fi puse toate fisierele .html
+- `database/`: in acest director se afla data de baze a aplicatiei
 
 <div style='color:red'><b>In cazul in care directoarele nu apar in repo inseamna ca momentan nu sunt fisiere in ele!</b></div>
