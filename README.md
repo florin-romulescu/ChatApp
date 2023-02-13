@@ -35,3 +35,18 @@ pip3 install flask
 ```
 flask --app main run
 ```
+
+### Structura directoare
+
+Aici este explicata cum arata structura de directoare si ce se intampla in fiecare fisier:
+
+- `README.md`: documentatia proiectului
+- `.gitignore`: contine fisierele care vor fi ignorate de commit
+- `app.py`: fisierul principal de la care porneste executia serverului
+- `views.py`: contine functiile pentru fiecare pagina
+- `img/`: in acest director vor fi puse toate imaginile folosite
+- `js/`: in acest director vor fi puse toate scripturile de JavaScript
+- `style/`: in acest director vor fi puse toate fisierele .css
+- `templates/`: in acest director vor fi puse toate fisierele .html
+
+<div style='color:red'><b>In cazul in care directoarele nu apar in repo inseamna ca momentan nu sunt fisiere in ele!</b></div>
