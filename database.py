@@ -82,6 +82,15 @@ def insert_user(user_name:str, password:str, is_admin:bool):
     dbConnection.close()
 
 def get_user(user_name:str, password:str) -> tuple:
+    '''
+    This function returns the user with the given name and
+    password. If no name was matched in the database it returns
+    None.
+
+    @param user_name a string for the user you want to get
+    @param password a string for the user's password
+    @return a tuple with the user's data (id:int, name:str, password:str, is_admin:bool)
+    '''
     dbConnection = sqlite3.connect(PATH)
     cursor = dbConnection.cursor()
 
@@ -97,17 +106,46 @@ def get_user(user_name:str, password:str) -> tuple:
     
     return answer
 
-def select_all():
+def insert_msg(user_id:int, content:str):
+    '''
+    Insert a message of the user with the given id into the database.
+
+    @param user_id: the id of the user that sent the message
+    @param content: the content of the message
+    '''
     dbConnection = sqlite3.connect(PATH)
     cursor = dbConnection.cursor()
 
-    cursor.execute("""
-    SELECT * FROM users;
-    """)
+    INSERT_QUERRY = f'''
+        INSERT INTO messages (user_id, content)
+        VALUES ({user_id}, "{content}");
+    '''
 
+    cursor.execute(INSERT_QUERRY)
     dbConnection.commit()
-    ans = cursor.fetchall()
-
-    print(ans)
 
     dbConnection.close()
+
+def get_msg(user_id:int, content:str) -> list:
+    '''
+    Get the messages with the given user_id and content.
+
+    @param user_id: the user that sent the message
+    @param content: the content of the message
+    @return: a list with all the messages that match the user_id
+    and the content
+    '''
+    dbConnection = sqlite3.connect()
+    cursor = dbConnection.cursor()
+
+    SELECT_QUERRY = f'''
+        SELECT * FROM messages
+        WHERE user_id={user_id} AND content="{content}";
+    '''
+    cursor.execute(SELECT_QUERRY)
+    dbConnection.commit()
+    answer = cursor.fetchall()
+
+    dbConnection.close()
+
+    return answer
