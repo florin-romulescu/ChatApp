@@ -53,7 +53,10 @@ def create_db():
         # Close the conection
         dbConnection.close()
 
-def insert_user(user_name:str, password:str, is_admin:bool):
+def get_connection():
+    return sqlite3.connect(PATH)
+
+def insert_user(user_name:str, password:str, is_admin:bool) -> bool:
     '''
     This function inserts into the users table an user with the given
     parameters.
@@ -68,7 +71,7 @@ def insert_user(user_name:str, password:str, is_admin:bool):
     # Verify if the user exists
     user = get_user(user_name, password)
     if user != None:
-        return
+        return False
 
     # Insert the user
     INSERT_QUERRY = f"""
@@ -80,6 +83,7 @@ def insert_user(user_name:str, password:str, is_admin:bool):
     dbConnection.commit()
 
     dbConnection.close()
+    return True
 
 def get_user(user_name:str, password:str) -> tuple:
     '''
