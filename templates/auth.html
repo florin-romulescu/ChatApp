@@ -7,6 +7,9 @@
     <title>Authentification</title>
 </head>
 <body>
+    {% if err %}
+    <h2 style="color:red">User no found!</h2>
+    {% endif %}
     <h1>Auth</h1>
     <!--
         Aceasta este pagina de login.
@@ -14,5 +17,12 @@
         si parola acestuia.
         De asemenea trebuie sa contina un hiperlink/buton catre pagina de register.
     -->
+    <form action="/login" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
 </body>
 </html>

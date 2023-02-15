@@ -7,11 +7,25 @@
     <title>Register</title>
 </head>
 <body>
+    <div>
+        {% if err %}
+        <h2 style="color:green">User registered!</h2>
+        {% else %}
+        <h2 style="color:red">Register failed!</h2>
+        {% endif %}
+    </div>
     <h1>Register</h1>
     <!--
         Aceasta este pagina de register.
         Pentru a inregistra un utilizator este nevoie de un formular care
         sa preia numele si parola acestuia.
     -->
+    <form action="/register" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
 </body>
 </html>
