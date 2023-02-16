@@ -45,8 +45,9 @@ Aici este explicata cum arata structura de directoare si ce se intampla in fieca
 - `app.py`: fisierul principal de la care porneste executia serverului
 - `views.py`: contine functiile pentru fiecare pagina
 - `img/`: in acest director vor fi puse toate imaginile folosite
-- `js/`: in acest director vor fi puse toate scripturile de JavaScript
-- `style/`: in acest director vor fi puse toate fisierele .css
+- `static/`: in acest director se afla toate fisierele statice (css, js)
+    - `js/`: in acest director vor fi puse toate scripturile de JavaScript 
+    - `css/`: in acest director vor fi puse toate fisierele .css
 - `templates/`: in acest director vor fi puse toate fisierele .html
 - `database/`: in acest director se afla data de baze a aplicatiei
 
