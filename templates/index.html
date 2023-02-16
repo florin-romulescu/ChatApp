@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css"/>
     <title>ChatApp</title>
 </head>
 <body>
-    {% if user %}
-    <h1>Hello, {{user}}</h1>
-    {% else %}
-    <h1>ChatApp</h1>
-    {% endif %}
-    <!--
-        Aceasta este pagina chatului.
-        Poate fi accesata doar daca un utilizator este logat.
-        Va trebui sa contina un meniu cu titlul aplicatiei, utilizatorul logat,
-        un buton de logout (sau hiperlink) si pagina de about (informatii).
-        Dupa meniu va urma chatul global in care utilizatorul poate trimite mesaje.
-    -->
+    <div id="main">
+        <div id="submainmenu">
+            <div id="title" class="button">
+                <p id="title">Titlu</p>
+            </div>
+            <div id="user" class="button">
+                <p id="user">User</p>
+            </div>
+            <div id="rest">
+                <p id="rest">Chat global</p>
+            </div>
+            <div id="logout" class="button">
+                <p id="logout">Log Out</p>
+            </div>
+        </div>
+        <div id="chat-box">
+
+        </div>
+        <div id="textbox">
+            <form id="message-form">
+                <input type="text" id="text" class="input">
+            </form>
+        </div>
+    </div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+<script src="../static/js/sockets.js">
+    // var socket = io();
+    // socket.on("connect", function() {
+    //     socket.emit("message", {data: "I am connected!"});
+    // });
+</script>
 </html>
