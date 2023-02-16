@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/main.css"/>
     <title>ChatApp</title>
 </head>
 <body>
-    {% if user %}
-    <h1>Hello, {{user}}</h1>
-    {% else %}
-    <h1>ChatApp</h1>
-    {% endif %}
-    <!--
-        Aceasta este pagina chatului.
-        Poate fi accesata doar daca un utilizator este logat.
-        Va trebui sa contina un meniu cu titlul aplicatiei, utilizatorul logat,
-        un buton de logout (sau hiperlink) si pagina de about (informatii).
-        Dupa meniu va urma chatul global in care utilizatorul poate trimite mesaje.
-    -->
+    <div id="main">
+        <div id="submainmenu">
+            <div id="title" class="button">
+                <p id="title">Titlu</p>
+            </div>
+            <div id="user" class="button">
+                <p id="user">User</p>
+            </div>
+            <div id="rest">
+                <p id="rest">Chat global</p>
+            </div>
+            <div id="logout" class="button">
+                <p id="logout">Log Out</p>
+            </div>
+        </div>
+        <div id="textbox">
+            <input type="text" id="text" class="input">  
+        </div>
+    </div>
 </body>
 </html>
